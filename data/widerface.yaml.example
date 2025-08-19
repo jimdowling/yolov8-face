@@ -1,4 +1,4 @@
-path: PROJECT_DIR/data/widerface
+path: /hopsfs/Jupyter/yolov8-face/data/widerface
 train: train
 val: val
 test:

@@ -1,5 +1,7 @@
 import argparse
 from ultralytics import YOLO
+import torch.multiprocessing as mp
+mp.set_sharing_strategy("file_system")
 
 
 if __name__ == '__main__':
@@ -14,6 +16,7 @@ if __name__ == '__main__':
     parser.add_argument('--optimizer', default=None, help='SGD, Adam, Adamax, AdamW, NAdam, RAdam, RMSProp, auto')
     parser.add_argument('--lrf', type=float, default=None, help='Final learning rate (lr0 * lrf)')
     parser.add_argument('--weight-decay', type=float, default=None, help='Optimizer weight decay')
+    parser.add_argument('--workers', type=int, default=0, help='Number of workers (needs admin to set /dev/shm to be larger than default')
     opt = parser.parse_args()
 
     params = {
@@ -23,6 +26,7 @@ if __name__ == '__main__':
         'imgsz': opt.imgsz,
         'device': opt.device,
         'resume': opt.resume,
+        'workers': opt.workers,
     }
     if opt.optimizer:
         params['optimizer'] = opt.optimizer
