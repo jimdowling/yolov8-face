@@ -27,9 +27,11 @@ if __name__ == '__main__':
 
     img = results[0].plot()  # BGR numpy array
     img = Image.fromarray(img[..., ::-1])  # Convert to RGB for PIL
-    img.show()
 
-    # Save image as PNG in local directory
-    output_path = os.path.abspath(opt.output)
+    # Derive output filename from input
+    base, _ = os.path.splitext(os.path.basename(opt.source))
+    output_filename = f"{base}-faces-detected.png"
+    output_path = os.path.abspath(output_filename)
+
     img.save(output_path, format="PNG")
     print(f"Saved prediction to {output_path}")
