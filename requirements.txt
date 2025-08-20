@@ -1,4 +1,7 @@
-ultralytics>=8.3.0
+#ultralytics>=8.3.0
+fedn
+ultralytics==8.3.149
+opencv-python-headless==3.4.18.65
 
 ### Optional - ONNX format
 # onnx>=1.17.0
