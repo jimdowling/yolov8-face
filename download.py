@@ -33,9 +33,9 @@ if __name__ == '__main__':
     opt = parser.parse_args()
 
     files = {
-        'WIDER_train.zip': 'https://huggingface.co/datasets/wider_face/resolve/main/data/WIDER_train.zip',
-        'WIDER_val.zip': 'https://huggingface.co/datasets/wider_face/resolve/main/data/WIDER_val.zip',
-        'wider_face_split.zip': 'https://huggingface.co/datasets/wider_face/resolve/main/data/wider_face_split.zip',
+        'WIDER_train.zip': 'https://repo.hops.works/dev/jdowling/WIDER_train.zip',
+        'WIDER_val.zip': 'https://repo.hops.works/dev/jdowling/WIDER_val.zip',
+        'wider_face_split.zip': 'https://repo.hops.works/dev/jdowling/wider_face_split.zip',
     }
 
     for filename in files:
