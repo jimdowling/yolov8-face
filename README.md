@@ -63,7 +63,7 @@ pip install -r requirements.txt
 ## Prediction
 
 ```shell
-python predict.py --weights weights/yolov8n-face-lindevs.pt --source data/images/bus.jpg
+python predictsave.py --weights weights/yolov8n-face-lindevs.pt --source data/images/bus.jpg
 ```
 
 * OpenCV DNN
