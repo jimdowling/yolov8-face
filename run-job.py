@@ -16,8 +16,6 @@ def create_feature_groups_job(job_api, py_job_config, recreate):
     job = get_job(job_api, job_name) 
     if job:
         return job
-    print(f"Deleting and recreating existing '{job_name}'.")
-    job.delete()
     print(f"Creating new job '{job_name}' ...")
     py_job_config['appPath'] = "Jupyter/yolov8-face/create_fgs.py"
     py_job_config['environmentName'] = "pandas-training-pipeline"  # "yolo8"
@@ -50,6 +48,7 @@ if __name__ == "__main__":
     job_api = project.get_jobs_api()
     # git_api = project.get_git_api()
     # git_repo = git_api.get_repo("yolov8-face")
+    # git_repo.pull()
 
     py_job_config = job_api.get_configuration("PYTHON")
     job = ""   
