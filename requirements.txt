@@ -1,3 +1,5 @@
 fedn
 ultralytics==8.3.149
 gradio
+numpy==1.23.5
+opencv-python==4.8.1.78
