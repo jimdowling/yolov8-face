@@ -45,7 +45,7 @@ The models have been trained on [WIDERFace](http://shuoyang1213.me/WIDERFACE/) d
 
 * "Edit configuration" before starting a Jupyter notebook:
 
-Memory: 16GB, CPUs: 1, GPU: 1
+** Memory: 16GB, CPUs: 1, GPU: 1
 
 * Start the notebook with the environment 'yolo8'
 
@@ -61,11 +61,15 @@ Now check in the 'results' directory for your bus png file with detected faces
 
 * Run notebooks in the following order
 
-### Create feature groups for all training images
+Create feature groups for all training images
+```shell
     1-create-feature-groups.ipynb
+```
 
-### Create the training/test split and fine tune the pretrained model
+Create the training/test split and fine tune the pretrained model
+```shell
     2-fine-tune.ipynb
+```
 
 Now check in the model registry for your trained model
 
@@ -74,9 +78,9 @@ Now check in the model registry for your trained model
 
 You need to set the following environment variables
 
-HOPSWORKS_HOST=saab.dev-cloud.hopsworks.ai
-HOPSWORKS_PROJECT=groupX
-HOPSWORKS_API_KEY=
+* HOPSWORKS_HOST=saab.dev-cloud.hopsworks.ai
+* HOPSWORKS_PROJECT=groupX
+* HOPSWORKS_API_KEY=
 
 ```shell
 python run-job create [drop]
