@@ -45,7 +45,7 @@ The models have been trained on [WIDERFace](http://shuoyang1213.me/WIDERFACE/) d
 
 - "Edit configuration" before starting a Jupyter notebook:
 
-  - Memory: 12000 (MB), CPUs: 2, GPU: 1
+  - Memory: 10000 (MB), CPUs: 1, GPU: 1
 
 - Start the notebook with the environment 'yolo8'
 
