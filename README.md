@@ -53,7 +53,7 @@ The models have been trained on [WIDERFace](http://shuoyang1213.me/WIDERFACE/) d
 
 ```shell
     bash
-    cd Jupyter/yolov8-face
+    cd yolov8-face
     python predictsave.py --weights weights/yolov8n-face-lindevs.pt --source data/images/bus.jpg
 ```
 
