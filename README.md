@@ -43,13 +43,13 @@ The models have been trained on [WIDERFace](http://shuoyang1213.me/WIDERFACE/) d
 
 ## Training in Notebooks
 
-* "Edit configuration" before starting a Jupyter notebook:
+- "Edit configuration" before starting a Jupyter notebook:
 
-** Memory: 16GB, CPUs: 1, GPU: 1
+  - Memory: 16GB, CPUs: 1, GPU: 1
 
-* Start the notebook with the environment 'yolo8'
+- Start the notebook with the environment 'yolo8'
 
-* Create a console in Jupyter and run the following
+- Create a console in Jupyter and run the following
 
 ```shell
     bash
