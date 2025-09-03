@@ -59,7 +59,9 @@ The models have been trained on [WIDERFace](http://shuoyang1213.me/WIDERFACE/) d
 
 Now check in the 'results' directory for your bus png file with detected faces
 
-* Run notebooks in the following order
+***
+
+### Run notebooks in the following order
 
 Create feature groups for all training images
 ```shell
