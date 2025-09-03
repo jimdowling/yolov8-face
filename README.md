@@ -112,9 +112,4 @@ python download.py
 python annotations.py
 ```
 
-* Copy `widerface.yaml.example` file to `widerface.yaml`:
-
-```shell
-python data_file.py
-```
 
