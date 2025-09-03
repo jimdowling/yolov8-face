@@ -2,7 +2,13 @@ import argparse
 import os
 import shutil
 import cv2
+src_dir = "data/widerface"
+shutil.make_archive(zip_path, 'zip', src_dir)
+print(f"Created zip: {zip_path}.zip")
 
+# 2. Recursively delete the original directory
+shutil.rmtree(src_dir)
+print(f"Deleted directory: {src_dir}")
 
 def process(images, labels, output):
     annotations = {}
@@ -62,3 +68,7 @@ if __name__ == '__main__':
 
     process(opt.train_images, opt.train_labels, train_output)
     process(opt.val_images, opt.val_labels, val_output)
+
+    shutil.make_archive(f"{opt.output}.zip", 'zip', opt.output)
+    shutil.rmtree(opt.output)
+

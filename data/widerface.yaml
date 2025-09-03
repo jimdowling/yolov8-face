@@ -1,4 +1,4 @@
-path: /hopsfs/Jupyter/yolov8-face/data/widerface
+path: /tmp/widerface
 train: train
 val: val
 test:

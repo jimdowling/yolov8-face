@@ -6,6 +6,9 @@ import numpy as np
 import hopsworks
 import os
 from PIL import Image
+import shutil
+import zipfile
+
 
 HELPER_MODULE = "numpyhelper"
 helper = get_helper(HELPER_MODULE)
@@ -72,9 +75,18 @@ def load_parameters(model_path):
     yolo_model.ckpt = {"model": torch_model}
     return yolo_model
 
+def copy_to_local_dir_training_data():
+    print("Copying training data to local directory.")
+    src = "/hopsfs/Jupyter/yolov8-face/data/widerface.zip"
+    dst = "/tmp/widerface.zip"
+    shutil.copy2(src, dst)
+    with zipfile.ZipFile(dst, 'r') as zip_ref:
+        zip_ref.extractall("/tmp")
+    print("Finished copying.")
+
 
 if __name__ == '__main__':
-
+    copy_to_local_dir_training_data()
     model = load_parameters("weights/face_finder_best.npz")
     params = {
         'data': '/hopsfs/Jupyter/yolov8-face/data/widerface.yaml',
@@ -93,6 +105,12 @@ if __name__ == '__main__':
     model.train(**params)
     
     
+    mr = hopsworks.login().get_model_registry()
+    
+    model_dir = "mr_model"
+    os.makedirs(f"{model_dir}/images", exist_ok=True)
+    save_parameters(model, f"./{model_dir}/fine-tuned-model.npz")
+
     img_path = "data/images/bus.jpg"
     results = model.predict(
         img_path,
@@ -106,12 +124,6 @@ if __name__ == '__main__':
     img = results[0].plot()  # BGR numpy array
     img = Image.fromarray(img[..., ::-1])  # Convert to RGB for PIL
     
-   
-    mr = hopsworks.login().get_model_registry()
-    model_dir = "mr_model"
-    os.makedirs(f"{model_dir}/images", exist_ok=True)
-    save_parameters(model, f"./{model_dir}/fine-tuned-model.npz")
-
     base, _ = os.path.splitext(os.path.basename(img_path))
     output_filename = f"./{model_dir}/images/{base}-faces-detected.png"
     output_path = os.path.abspath(output_filename)

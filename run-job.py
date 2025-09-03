@@ -33,9 +33,9 @@ def train(job_api, py_job_config, recreate):
         return job
     print(f"Creating new job '{job_name}' ...")
     py_job_config['appPath'] = "Jupyter/yolov8-face/train.py"
-    py_job_config['environmentName'] = "yolo8"  
-    py_job_config['resourceConfig']['cores'] = 2
-    py_job_config['resourceConfig']['memory'] = 16192
+    py_job_config['environmentName'] = "yolov8"  
+    py_job_config['resourceConfig']['cores'] = 1
+    py_job_config['resourceConfig']['memory'] = 10000
     py_job_config['resourceConfig']['gpus'] = 1
     return job_api.create_job(
         job_name, 
