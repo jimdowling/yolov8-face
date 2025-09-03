@@ -89,6 +89,23 @@ python run-job create [drop]
 python run-job train [drop]
 ```
 
+### Extra notebooks 
+
+Exploratory data analysis of the images/bounding-boxes in feature groups.
+```shell
+    3-eda-fgs.ipynb
+```
+
+Build vector index for similarity search in a feature group (requires a GPU). Takes a few mins.
+```shell
+    4-similarity-search-index.ipynb
+```
+
+UI with gradio to do similarity search:
+```shell
+    5-similarity-search-gradio.ipynb
+```
+
 # This has already been done for your projects
 
 ## Installation
