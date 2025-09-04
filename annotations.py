@@ -62,5 +62,6 @@ if __name__ == '__main__':
     process(opt.train_images, opt.train_labels, train_output)
     process(opt.val_images, opt.val_labels, val_output)
 
-    shutil.make_archive(f"{opt.output}", 'zip', opt.output)
+    
+    shutil.make_archive(opt.output, 'zip', root_dir=".", base_dir=opt.output)
     shutil.rmtree(opt.output)

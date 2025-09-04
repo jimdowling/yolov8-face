@@ -77,7 +77,7 @@ def load_parameters(model_path):
 
 def copy_to_local_dir_training_data():
     print("Copying training data to local directory.")
-    src = "/hopsfs/Jupyter/yolov8-face/data/widerface.zip"
+    src = "/hopsfs/Jupyter/yolov8-face/widerface.zip"
     dst = "/tmp/widerface.zip"
     shutil.copy2(src, dst)
     with zipfile.ZipFile(dst, 'r') as zip_ref:
