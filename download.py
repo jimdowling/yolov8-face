@@ -36,6 +36,7 @@ if __name__ == '__main__':
         'WIDER_train.zip': 'https://repo.hops.works/dev/jdowling/WIDER_train.zip',
         'WIDER_val.zip': 'https://repo.hops.works/dev/jdowling/WIDER_val.zip',
         'wider_face_split.zip': 'https://repo.hops.works/dev/jdowling/wider_face_split.zip',
+        'widerface.zip': 'https://repo.hops.works/dev/jdowling/widerface.zip',
     }
 
     for filename in files:
